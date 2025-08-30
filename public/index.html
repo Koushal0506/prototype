@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishi Mitra - Farmer Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-tractor"></i> Krishi Mitra</h1>
+            <p>Your AI-powered farming assistant</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
+            <a href="#products"><i class="fas fa-seedling"></i> Products</a>
+            <a href="#ai-help"><i class="fas fa-robot"></i> AI Help</a>
+            <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Welcome to Krishi Mitra</h2>
+                <p>AI-powered assistance and quality farming materials for modern farmers</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="openAIHelp()">
+                        <i class="fas fa-robot"></i> Ask AI Assistant
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToProducts()">
+                        <i class="fas fa-shopping-cart"></i> Browse Products
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="/images/farmer-hero.jpg" alt="Happy Farmer">
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="products-section">
+            <h2><i class="fas fa-seedling"></i> Farming Materials Store</h2>
+            <div class="category-buttons">
+                <button class="category-btn active" data-category="all">All Products</button>
+                <button class="category-btn" data-category="seeds">Seeds</button>
+                <button class="category-btn" data-category="fertilizers">Fertilizers</button>
+                <button class="category-btn" data-category="pesticides">Pesticides</button>
+                <button class="category-btn" data-category="equipment">Equipment</button>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here -->
+            </div>
+        </section>
+
+        <!-- AI Help Section -->
+        <section id="ai-help" class="ai-section">
+            <h2><i class="fas fa-robot"></i> AI Farming Assistant</h2>
+            <div class="ai-chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message ai-message">
+                        <strong>Krishi Mitra AI:</strong> Hello! I'm here to help with your farming questions. Ask me about crops, pests, soil, or any farming topic!
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="userInput" placeholder="Ask about farming...">
+                    <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- AI Chat Popup -->
+    <div id="aiPopup" class="ai-popup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3><i class="fas fa-robot"></i> AI Assistant</h3>
+                <button class="close-btn" onclick="closeAIHelp()">×</button>
+            </div>
+            <div class="popup-messages" id="popupMessages">
+                <div class="message ai-message">
+                    Hi! How can I help with your farming today?
+                </div>
+            </div>
+            <div class="popup-input">
+                <input type="text" id="popupInput" placeholder="Ask your farming question...">
+                <button onclick="sendPopupMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Krishi Mitra. Helping farmers grow better.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
